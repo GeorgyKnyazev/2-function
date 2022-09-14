@@ -22,25 +22,22 @@ namespace _2_function
                 percentageManaFilling = (Convert.ToInt32(Console.ReadLine()) * maxMana) / 100; ;
                 Console.Clear();
 
-                DrawBar(percentageHealthFilling, maxHealth, ConsoleColor.Red, healthPosition);
-                DrawBar(percentageManaFilling, maxMana, ConsoleColor.Blue, manaPosition);
+                DrawBar(percentageHealthFilling, maxHealth, healthPosition);
+                DrawBar(percentageManaFilling, maxMana, manaPosition);
 
             }
         }
-        static void DrawBar(int value, int maxValue, ConsoleColor color, int position)
+        static void DrawBar(int value, int maxValue, int position)
         {
-            ConsoleColor defaultColor = Console.BackgroundColor;
             string bar = "";
 
             for (int i = 0; i < value; i++)
             {
-                bar += ' ';
+                bar += '#';
             }
             Console.SetCursorPosition(0, position);
             Console.Write('[');
-            Console.BackgroundColor = color;
             Console.Write(bar);
-            Console.BackgroundColor = defaultColor;
     
             bar = "";
 
